@@ -1,0 +1,104 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.score {
+  position: fixed;
+  top: 10px;
+  left: 20px;
+  font-size: 18px;
+}
+
+.simon {
+  width: 600px;
+  height: 600px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  position: relative;
+}
+
+.button {
+  width: 300px;
+  height: 300px;
+  border: 10px solid black;
+  transition: .2s;
+}
+.button.active {
+  filter: brightness(70%);
+}
+.button:hover {
+  border: 10px solid rgb(82, 82, 82);
+}
+.green {
+  background-color: green;
+  border-top-left-radius: 300px;
+}
+.red {
+  background-color: red;
+  border-top-right-radius: 300px;
+}
+.blue {
+  background-color: blue;
+  border-bottom-left-radius: 300px;
+}
+.yellow {
+  background-color: yellow;
+  border-bottom-right-radius: 300px;
+}
+.center {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  background-color: rgb(211, 211, 211);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 24px;
+}
+.controls {
+  margin-left: 20px;
+}
+#start {
+  padding: 10px 15px;
+  background-color: rgb(23, 88, 185);
+  color: white;
+  font-size: 18px;
+  letter-spacing: .3px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  transition: .2s;
+  margin: 10px;
+}
+#start:hover {
+  filter: brightness(110%);
+}
+#start:active {
+  transform: translateY(-3px);
+}
+.controls ul {
+  list-style: none;
+}
+.controls ul li {
+  padding: 5px;
+  font-size: 18px;
+}
+.controls ul li label {
+  cursor: pointer;
+}

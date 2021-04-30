@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Simon Game</title>
+</head>
+<body>
+  <div id="app">
+    <audio ref="sound1" src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3"></audio>
+    <audio ref="sound2" src="https://s3.amazonaws.com/freecodecamp/simonSound2.mp3"></audio>
+    <audio ref="sound3" src="https://s3.amazonaws.com/freecodecamp/simonSound3.mp3"></audio>
+    <audio ref="sound4" src="https://s3.amazonaws.com/freecodecamp/simonSound4.mp3"></audio>
+    <div class="score">Best score: {{bestScore}}</div>
+    <div class="simon">
+      <div class="green button" @click="inputSection(1)" :class="{active: greenActive}"></div>
+      <div class="red button" @click="inputSection(2)" :class="{active: redActive}"></div>
+      <div class="blue button" @click="inputSection(3)" :class="{active: blueActive}"></div>
+      <div class="yellow button" @click="inputSection(4)" :class="{active: yellowActive}"></div>
+      <div class="center">
+        Simon
+      </div>
+    </div>
+    <div class="controls">
+      <h2>Round: {{count}}</h2>
+      <button id="start" @click="start">Start</button>
+      <h2>Game options:</h2>
+      <ul>
+        <li>
+          <input id="ease" type="radio" name="mode" value="ease" v-model="mode">
+          <label for="ease">Ease</label>
+        </li>
+        <li>
+          <input id="normal" type="radio" name="mode" value="normal"  v-model="mode">
+          <label for="normal">Normal</label>
+        </li>
+        <li>
+          <input id="hard" type="radio" name="mode" value="hard"  v-model="mode">
+          <label for="hard">Hard</label>
+        </li>
+      </ul>
+    </div>  
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
